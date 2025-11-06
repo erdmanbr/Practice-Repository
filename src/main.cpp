@@ -1,8 +1,12 @@
 #include <iostream>
 
+#include "bf_lib/types/bf_array.h"
+
 int main (int argc, char ** argv) {
 
-    std::cout << "Bit Flipper" << std::endl;
+    bflib::types::BFArray<int> bfa;
+
+    std::cout << bfa.LogMessage << std::endl;
 
     return 0;
     
