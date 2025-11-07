@@ -4,9 +4,9 @@
 
 int main (int argc, char ** argv) {
 
-    bflib::types::BFArray<int> bfa;
+    bflib::types::BFArray<int, 4> bfa;
 
-    std::cout << bfa.LogMessage << std::endl;
+    bfa.Print();
 
     return 0;
     
