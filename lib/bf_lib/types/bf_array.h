@@ -19,7 +19,9 @@ namespace bflib {
             BFArray();
             BFArray(std::initializer_list<T>);
 
-            void Print();
+            T& operator[] (std::size_t index);
+
+            void Print() const;
 
             std::string LogMessage { "BFArray Log Message" };
 
@@ -46,7 +48,17 @@ namespace bflib {
         }
 
         template<class T, std::size_t N>
-        void BFArray<T, N>::Print() {
+        T& BFArray<T, N>::operator[] (std::size_t index) {
+
+            if (index < N)
+                return data[index];
+            else
+                throw std::out_of_range("Index out of range in BFArray");
+
+        }
+
+        template<class T, std::size_t N>
+        void BFArray<T, N>::Print() const {
 
             for (std::size_t i = 0; i < N; i++) {
 

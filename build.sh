@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+
+trap 'echo "An error occurred. Exiting..."' ERR
+
 function help() {
       echo "Usage: $0 [OPTIONS]
         
