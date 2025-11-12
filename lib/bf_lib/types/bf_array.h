@@ -20,6 +20,7 @@ namespace bflib {
             BFArray(std::initializer_list<T>);
 
             T& operator[] (std::size_t index);
+            const T& operator[] (std::size_t index) const;
 
             void Print() const;
 
@@ -49,6 +50,16 @@ namespace bflib {
 
         template<class T, std::size_t N>
         T& BFArray<T, N>::operator[] (std::size_t index) {
+
+            if (index < N)
+                return data[index];
+            else
+                throw std::out_of_range("Index out of range in BFArray");
+
+        }
+
+        template<class T, std::size_t N>
+        const T& BFArray<T, N>::operator[] (std::size_t index) const {
 
             if (index < N)
                 return data[index];

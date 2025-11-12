@@ -6,9 +6,9 @@ int main (int argc, char ** argv) {
 
     bflib::types::BFArray<int, 4> bfa;
 
-    bfa[5] = 20;
+    bfa[2] = 20;
 
-    std::cout << bfa[5] << std::endl;
+    std::cout << bfa[2] << std::endl;
 
     bfa.Print();
 
